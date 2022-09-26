@@ -1,10 +1,51 @@
 ---
 layout: base
 title: Home
+pagination: 
+    data: photos.fwxweaj.media
+    size: 15
+permalink: "{% if pagination.pageNumber>0
+%}page-{{pagination.pageNumber | plus:1 }}{% 
+endif %}/index.html"
 ---
 <header>
     <h1>{{ title }} </h1>
+    <p>Ninety-five photos of <mark>laptops 💻</mark> collected by <a href="https://www.pexels.com/@fotios-photos/collections/">Lisa Fotios</a>. 
+        View collection on <a href="https://www.pexels.com/collections/laptops-fwxweaj/">Pexels</a>!
+    </p>
 </header>
+
+<main>
+    <ul>
+        {% for photo in pagination.items -%}
+            <li><img src="{{photo.src.tiny}}" alt="{{photo.alt}}" /></li>
+        {% endfor -%}
+    </ul>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ pagination.href.first }}">First</a></li>
+            
+            <li>
+                {% if pagination.href.previous -%}
+                    <a href = "{{ pagination.href.previous }}">Previous</a>
+                {% endif -%}
+            </li>
+            
+            <li>
+                Page {{ pagination.pageNumber | plus: 1 }}
+            </li>
+
+            <li>
+                {% if pagination.href.next -%}
+                    <a href = "{{ pagination.href.next }}">Next</a>
+                {% endif -%}
+            </li>
+            
+            <li><a href="{{ pagination.href.last }}">Last</a></li>
+        </ul>
+    </nav>
+</main>
 
 <footer>
     <hr>
