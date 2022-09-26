@@ -10,12 +10,12 @@ endif %}/index.html"
 ---
 <header>
     <h1>{{ title }} </h1>
+    <p>Ninety-five photos of <mark>laptops 💻</mark> collected by <a href="https://www.pexels.com/@fotios-photos/collections/">Lisa Fotios</a>. 
+        View collection on <a href="https://www.pexels.com/collections/laptops-fwxweaj/">Pexels</a>!
+    </p>
 </header>
 
 <main>
-    <h2>Laptops 💻</h2>
-    <p>95 photos of laptops collected by <a href="https://www.pexels.com/@fotios-photos/collections/">Lisa Fotios</a></p>
-
     <ul>
         {% for photo in pagination.items -%}
             <li><img src="{{photo.src.tiny}}" alt="{{photo.alt}}" /></li>
