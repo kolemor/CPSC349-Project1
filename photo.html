@@ -20,6 +20,12 @@ Photo-{{photo.id}}{% endfor -%}/index.html"
             <figcaption>
                 Photo id: {{photo.id}}
             </figcaption>
-        </figure>>
+        </figure>
+        <p>
+            <strong>Photographer: </strong>
+            <a href= "{{photo.photographer_url}}"> 
+                {{photo.photographer}}
+            </a>
+        </p>
     {% endfor -%}
 </main>
