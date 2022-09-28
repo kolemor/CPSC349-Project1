@@ -27,9 +27,9 @@ endif %}/index.html"
             <li><a href="{{ pagination.href.first }}">First</a></li>
             
             <li>
-                {% if pagination.href.previous -%}
-                    <a href = "{{ pagination.href.previous }}">Previous</a>
-                {% endif -%}
+                <a href="Photo-{{photo.id}}/index.html">
+                    <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" />
+                </a>
             </li>
             
             <li>
