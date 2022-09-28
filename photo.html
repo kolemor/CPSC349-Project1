@@ -3,8 +3,8 @@ layout: base
 pagination: 
     data: photos.fwxweaj.media
     size: 1
-permalink: "{% for photo in pagination.items -%}
-Photo-{{photo.id}}{% endfor -%}/index.html"
+    alias: photo
+permalink: "/photo/{{photo.alt|slugify}}-{{photo.id|slugify}}/"
 ---
 
 <header>
