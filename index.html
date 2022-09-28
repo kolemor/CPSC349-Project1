@@ -18,7 +18,9 @@ endif %}/index.html"
 <main>
     <ul>
         {% for photo in pagination.items -%}
+        <a href="Photo-{{photo.id}}/index.html">
             <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" />
+        </a>
         {% endfor -%}
     </ul>
 
@@ -27,9 +29,9 @@ endif %}/index.html"
             <li><a href="{{ pagination.href.first }}">First</a></li>
             
             <li>
-                <a href="Photo-{{photo.id}}/index.html">
-                    <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" />
-                </a>
+                {% if pagination.href.previous -%}
+                    <a href = "{{ pagination.href.previous }}">Previous</a>
+                {% endif -%}
             </li>
             
             <li>
