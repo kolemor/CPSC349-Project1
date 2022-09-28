@@ -1,0 +1,25 @@
+---
+layout: base
+pagination: 
+    data: photos.fwxweaj.media
+    size: 1
+permalink: "{% for photo in pagination.items -%}
+Photo-{{photo.id}}{% endfor -%}/index.html"
+---
+
+<header>
+    {% for photo in pagination.items -%}
+        <h1>{{ photo.alt }} </h1>
+    {% endfor -%}
+</header>
+
+<main>
+    {% for photo in pagination.items -%}
+        <figure>
+            <img src="{{photo.src.large}}" alt="{{photo.alt}}" />
+            <figcaption>
+                Photo id: {{photo.id}}
+            </figcaption>
+        </figure>>
+    {% endfor -%}
+</main>
