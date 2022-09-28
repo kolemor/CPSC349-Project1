@@ -18,7 +18,7 @@ endif %}/index.html"
 <main>
     <ul>
         {% for photo in pagination.items -%}
-        <a href="Photo-{{photo.id}}/index.html">
+        <a href="/photo/{{photo.alt|slugify}}-{{photo.id|slugify}}/">
             <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" />
         </a>
         {% endfor -%}
