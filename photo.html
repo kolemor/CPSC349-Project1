@@ -1,0 +1,46 @@
+---
+layout: base
+pagination: 
+    data: photos.fwxweaj.media
+    size: 1
+    alias: photo
+permalink: "/photo/{{photo.id|slugify}}/"
+---
+<nav>
+    <a href="/"><i class="fa-solid fa-house"></i></a>
+</nav>
+
+<header>
+    <script src="https://kit.fontawesome.com/60d96da487.js"
+    crossorigin="anonymous">
+    </script>
+    {% for photo in pagination.items -%}
+        <h1>{{ photo.alt }} </h1>
+    {% endfor -%}
+</header>
+
+<main>
+    {% for photo in pagination.items -%}
+        <figure>
+            <img src="{{photo.src.large}}" alt="{{photo.alt}}" />
+            <figcaption>
+                Photo id: {{photo.id}}
+            </figcaption>
+        </figure>
+        <p>
+            <strong>Photographer: </strong>
+            <a href= "{{photo.photographer_url}}"> 
+                {{photo.photographer}}
+            </a>
+        </p>
+    {% endfor -%}
+</main>
+
+<footer>
+    <hr>
+    <p>
+        <small>
+            <a href="https://www.pexels.com">Photos provided by Pexels</a>
+        </small>
+    </p>
+</footer>

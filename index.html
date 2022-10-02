@@ -18,10 +18,12 @@ endif %}/index.html"
 <main>
     <ul>
         {% for photo in pagination.items -%}
-            <li><img src="{{photo.src.tiny}}" alt="{{photo.alt}}" /></li>
+        <a href="/photo/{{photo.id|slugify}}/">
+            <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" />
+        </a>
         {% endfor -%}
     </ul>
-    
+
     <nav>
         <ul>
             <li><a href="{{ pagination.href.first }}">First</a></li>
