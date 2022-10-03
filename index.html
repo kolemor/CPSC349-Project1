@@ -9,6 +9,7 @@ permalink: "{% if pagination.pageNumber>0
 endif %}/index.html"
 ---
 <header>
+    {% include '_nav.html' %}
     <h1>{{ title }} </h1>
     <p>Ninety-five photos of <mark>laptops 💻</mark> collected by <a href="https://www.pexels.com/@fotios-photos/collections/">Lisa Fotios</a>. 
         View collection on <a href="https://www.pexels.com/collections/laptops-fwxweaj/">Pexels</a>!
@@ -16,14 +17,16 @@ endif %}/index.html"
 </header>
 
 <main>
-    <ul>
+    <section><h2>Click an image below for more detail</h2></section>
+    <section>
         {% for photo in pagination.items -%}
         <a href="/photo/{{photo.id|slugify}}/">
-            <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" />
+            <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" title="Photo ID: {{photo.id}}" />
         </a>
         {% endfor -%}
-    </ul>
+    </section>
 
+    <section>
     <nav>
         <ul>
             <li><a href="{{ pagination.href.first }}">First</a></li>
@@ -47,13 +50,6 @@ endif %}/index.html"
             <li><a href="{{ pagination.href.last }}">Last</a></li>
         </ul>
     </nav>
+</section>
 </main>
 
-<footer>
-    <hr>
-    <p>
-        <small>
-            <a href="https://www.pexels.com">Photos provided by Pexels</a>
-        </small>
-    </p>
-</footer>
