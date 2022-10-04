@@ -17,7 +17,10 @@ endif %}/index.html"
 </header>
 
 <main>
-    <section><h2>Click an image below for more detail</h2></section>
+    <section>
+        <h2>Laptop Photo Collection</h2>
+    </section>
+    
     <section>
         {% for photo in pagination.items -%}
         <a href="/photo/{{photo.id|slugify}}/">
@@ -27,29 +30,7 @@ endif %}/index.html"
     </section>
 
     <section>
-    <nav>
-        <ul>
-            <li><a href="{{ pagination.href.first }}">First</a></li>
-            
-            <li>
-                {% if pagination.href.previous -%}
-                    <a href = "{{ pagination.href.previous }}">Previous</a>
-                {% endif -%}
-            </li>
-            
-            <li>
-                Page {{ pagination.pageNumber | plus: 1 }}
-            </li>
-
-            <li>
-                {% if pagination.href.next -%}
-                    <a href = "{{ pagination.href.next }}">Next</a>
-                {% endif -%}
-            </li>
-            
-            <li><a href="{{ pagination.href.last }}">Last</a></li>
-        </ul>
-    </nav>
-</section>
+    {% include '_page-nav.html' %}
+    </section>
 </main>
 

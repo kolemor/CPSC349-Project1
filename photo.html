@@ -6,17 +6,13 @@ pagination:
     alias: photo
 permalink: "/photo/{{photo.id|slugify}}/"
 ---
-
-
-<header>
-    {% include '_nav.html' %}
-    </script>
-    {% for photo in pagination.items -%}
-        <h1 style="color:{{photo.avg_color}}">{{ photo.alt }} </h1>
-    {% endfor -%}
-</header>
-
 <main>
+    <header>
+        {% include '_nav.html' %}
+        <h1>Laptop Photo #{{pagination.pageNumber | plus: 1}}</h1>
+        <p>{{ photo.alt }}</p>
+    </header>
+
     <section>
             <figure>
                 <img src="{{photo.src.large}}" alt="{{photo.alt}}" />
@@ -25,12 +21,17 @@ permalink: "/photo/{{photo.id|slugify}}/"
                 </figcaption>
             </figure>
     </section>
-            
+
     <section>
-                <strong>Photographer: &nbsp</strong>
-                <a href= "{{photo.photographer_url}}"> 
-                    {{photo.photographer}}
-                </a>
+        <h2>
+            <strong>Photographer: &nbsp</strong>
+            <a href= "{{photo.photographer_url}}">{{photo.photographer}}</a>
+        </h2>
     </section>
+    
+    <section>
+        {% include '_page-nav.html' %}
+    </section>
+    
 </main>
 
