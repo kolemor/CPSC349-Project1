@@ -10,10 +10,10 @@ permalink: "/photo/{{photo.id|slugify}}/"
     <header>
         {% include '_nav.html' %}
         <h1>Laptop Photo #{{pagination.pageNumber | plus: 1}}</h1>
-        <p>{{ photo.alt }}</p>
     </header>
 
     <section>
+        <h2>{{ photo.alt }}</h2>
             <figure>
                 <img src="{{photo.src.large}}" alt="{{photo.alt}}" />
                 <figcaption>
@@ -27,10 +27,9 @@ permalink: "/photo/{{photo.id|slugify}}/"
             <strong>Photographer: &nbsp</strong>
             <a href= "{{photo.photographer_url}}">{{photo.photographer}}</a>
         </h2>
-    </section>
-    
-    <section>
+        <hr>
         {% include '_page-nav.html' %}
+ 
     </section>
     
 </main>
