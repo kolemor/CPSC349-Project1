@@ -1,10 +1,10 @@
 <nav>
     <ul>
-        <li><a href="{{ pagination.href.first }}">First</a></li>
+        <li><a href="{{ pagination.href.first }}"><a><b>First</a></b></li>
         
         <li>
             {% if pagination.href.previous -%}
-                <a href = "{{ pagination.href.previous }}">Previous</a>
+                <a href = "{{ pagination.href.previous }}"><b>Previous</a></b>
             {% endif -%}
         </li>
         
@@ -14,10 +14,10 @@
 
         <li>
             {% if pagination.href.next -%}
-                <a href = "{{ pagination.href.next }}">Next</a>
+                <a href = "{{ pagination.href.next }}"><b>Next</a></b>
             {% endif -%}
         </li>
         
-        <li><a href="{{ pagination.href.last }}">Last</a></li>
+        <li><a href="{{ pagination.href.last }}"><b>Last</a></b></li>
     </ul>
 </nav>
