@@ -23,13 +23,18 @@ permalink: "/photo/{{photo.id|slugify}}/"
     </section>
 
     <section>
-        <h2>
-            <strong>Photographer: &nbsp</strong>
-            <a href= "{{photo.photographer_url}}">{{photo.photographer}}</a>
-        </h2>
-        <hr>
-        {% include '_page-nav.html' %}
- 
+        <header>
+            <h2>
+                <strong>Photographer: &nbsp</strong>
+                <a href= "{{photo.photographer_url}}">{{photo.photographer}}</a>
+            </h2>
+            <hr> 
+        </header>
+    </section>
+
+    <section>
+        <header><h3>Where Are We Going to?</h3></header>
+    {% include '_page-nav.html' %}
     </section>
     
 </main>
