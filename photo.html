@@ -13,7 +13,7 @@ permalink: "/photo/{{photo.id|slugify}}/"
     </header>
 
     <section>
-        <h2>{{ photo.alt }}</h2>
+        <header><h2>{{ photo.alt }}</h2></header>
             <figure>
                 <img src="{{photo.src.large}}" alt="{{photo.alt}}" />
                 <figcaption>
