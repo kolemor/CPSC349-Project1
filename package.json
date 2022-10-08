@@ -5,7 +5,8 @@
   "description": "CPSC 349 - Fall 2022 - Project 1",
   "scripts": {
     "start": "npx @11ty/eleventy --serve --config=.eleventy.cjs",
-    "test": "vnu --skip-non-html --Werror _site/"
+    "test": "vnu --skip-non-html --Werror _site/",
+    "build": "env NODE_ENV=production npx eleventy --pathprefix 'CPSC349-Project1'"
   },
   "repository": {
     "type": "git",
