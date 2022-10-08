@@ -5,8 +5,8 @@ pagination:
     data: photos.fwxweaj.media
     size: 15
 permalink: "{% if pagination.pageNumber>0
-%}page-{{pagination.pageNumber | plus:1 }}{% 
-endif %}/index.html"
+%}page-{{pagination.pageNumber | plus:1 }}/{% 
+endif %}index.html"
 ---
 <header>
     {% include '_nav.html' %}
