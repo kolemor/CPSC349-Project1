@@ -20,7 +20,7 @@ endif %}index.html"
     <section>
         <header><h2>Laptop Photo Collection</h2></header>
             {% for photo in pagination.items -%}
-        <a href="/photo/{{photo.id|slugify}}/">
+        <a href="/CPSC349-Project1/photo/{{photo.id|slugify}}/">
             <img src="{{photo.src.tiny}}" alt="{{photo.alt}}" title="Photo ID: {{photo.id}}" />
         </a>
         {% endfor -%}
